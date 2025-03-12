@@ -1,0 +1,6 @@
+<div class="aoe-buttons-group" [ngClass]="{'disabled' : disabled }">
+  <button class="aoe-buttons-group__button" *ngFor="let option of options()" [disabled]="disabled"
+    [ngClass]="{ 'active' : option === value }" (click)="onClickOption(option)">
+    <p>{{ option }}</p>
+  </button>
+</div>

@@ -1,0 +1,13 @@
+<div class="unit-details container">
+  <h2>Unit Details</h2>
+  <div class="unit-details__rows" *ngIf="unitProperties()">
+    <div *ngFor="let property of unitProperties().entries()" class="unit-details__row">
+      <div class="unit-details__label">
+        <p>{{ property[0] + ":"}}</p>
+      </div>
+      <div class="unit-details__value">
+        <p>{{ property[1] }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+:host ::ng-deep {
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.5rem;
+
+    th {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--font-color);
+      border-top: 0.1rem solid var(--border-color);
+      border-bottom: 0.1rem solid var(--border-color);
+      border-right: 0.1rem solid var(--border-color);
+      text-align: left;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      background-color: var(--body-background-color);
+    }
+
+    tbody tr {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f3f3f3;
+      }
+    }
+
+    td {
+      border-bottom: 0.1rem solid var(--border-color);
+      border-right: 0.1rem solid var(--border-color);
+      padding: 1rem 1rem 0.5rem;
+    }
+
+    th:first-child,
+    td:first-child {
+      border-left: 0.1rem solid var(--border-color);
+    }
+
+    thead tr:first-child th:first-child {
+      border-top-left-radius: 0.5rem;
+    }
+
+    thead tr:first-child th:last-child {
+      border-top-right-radius: 0.5rem;
+    }
+
+    tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+}

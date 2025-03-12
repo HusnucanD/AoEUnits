@@ -1,0 +1,71 @@
+@import url(../public/font/fonts.scss);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--body-background-color);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Trajan", sans-serif;
+  margin: 0;
+}
+
+:root {
+  --breakpoint-small: 540px;
+  --breakpoint-medium: 768px;
+  --breakpoint-large: 992px;
+  --body-background-color: #fbfbfb;
+  --font-color: #2c3e50;
+  --border-color: #d1d1d1;
+  --button-background-color: #f3f3f3;
+  --button-background-color-hover: #d7d7d7;
+  --button-background-color-active: #d7d7d7;
+  --p-checkbox-width: 1.75rem !important;
+  --p-checkbox-height: 1.75rem !important;
+  --p-checkbox-background: var(--background-color-light) !important;
+  --p-checkbox-checked-background: var(--font-color) !important;
+  --p-checkbox-checked-hover-background: var(--font-color) !important;
+  --p-checkbox-checked-border-color: var(--font-color) !important;
+  --p-checkbox-checked-hover-border-color: var(--font-color) !important;
+  --p-checkbox-border-color: var(--border-color) !important;
+  --p-checkbox-icon-size: 1.4rem !important;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: var(--font-color);
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--font-color);
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+p {
+  font-size: 1.5rem;
+  color: var(--font-color);
+}
+
+@media only screen and (max-width: 540px) {
+  .container {
+    width: 95%;
+  }
+}

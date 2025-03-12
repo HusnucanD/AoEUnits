@@ -1,0 +1,11 @@
+<header class="aoe-navigation-bar">
+  <nav class="aoe-navigation-bar__nav">
+    <img src="img/logo.png" alt="Age of Empires Logo" class="aoe-navigation-bar__logo" />
+    <ul class="aoe-navigation-bar__links">
+      <li>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li><a routerLink="/units" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">Units</a></li>
+    </ul>
+  </nav>
+</header>

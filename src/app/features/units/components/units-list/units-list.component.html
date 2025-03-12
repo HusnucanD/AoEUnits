@@ -1,0 +1,72 @@
+<div class="units-list container">
+  <h2>Units</h2>
+  <form [formGroup]="filterForm" class="units-list__form">
+    <h3>Age</h3>
+    <div class="units-list__row">
+      <aoe-buttons-group [options]="['All', 'Dark', 'Feudal', 'Castle', 'Imperial']" [formControlName]="'age'">
+      </aoe-buttons-group>
+    </div>
+    <h3 style="margin-top: 1rem;">Costs</h3>
+    <div class="units-list__row">
+      <div class="units-list__filter-label">
+        <aoe-checkbox [formControlName]="'filterWood'"></aoe-checkbox>
+        <label class="units-list__label" for="wood">Wood:</label>
+      </div>
+      <div class="units-list__filter-value">
+        <div>
+          <aoe-slider [min]="0" [max]="200" [formControlName]="'wood'">
+          </aoe-slider>
+        </div>
+        <p>{{ this.filterForm.get("wood")?.value }}</p>
+      </div>
+    </div>
+    <div class="units-list__row">
+      <div class="units-list__filter-label">
+        <aoe-checkbox [formControlName]="'filterFood'"></aoe-checkbox>
+        <label class="units-list__label" for="food">Food:</label>
+      </div>
+      <div class="units-list__filter-value">
+        <aoe-slider [min]="0" [max]="200" [formControlName]="'food'"></aoe-slider>
+        <p>{{ this.filterForm.get("food")?.value }}</p>
+      </div>
+    </div>
+    <div class="units-list__row">
+      <div class="units-list__filter-label">
+        <aoe-checkbox [formControlName]="'filterGold'"></aoe-checkbox>
+        <label class="units-list__label" for="gold">Gold:</label>
+      </div>
+      <div class="units-list__filter-value">
+        <aoe-slider [min]="0" [max]="200" [formControlName]="'gold'"></aoe-slider>
+        <p>{{ this.filterForm.get("gold")?.value }}</p>
+      </div>
+    </div>
+  </form>
+  <div class="units-list__table-container">
+    <aoe-table>
+      <th table-header>ID</th>
+      <th table-header>Name</th>
+      <th table-header>Age</th>
+      <th table-header>Country</th>
+      @for (unit of units(); track unit.id) {
+      <tr (click)="onClickUnit(unit)" table-row>
+        <td>
+          <p>{{ unit.id }}</p>
+        </td>
+        <td>
+          <p>{{ unit.name }}</p>
+        </td>
+        <td>
+          <p>{{ unit.age }}</p>
+        </td>
+        <td>
+          <p>{{ unit.cost !== null ? (
+            (unit.cost.Wood !== undefined ? "Wood: " + unit.cost.Wood + ", " : "") +
+            (unit.cost.Food !== undefined ? "Food: " + unit.cost.Food + ", " : "") +
+            (unit.cost.Gold !== undefined ? "Gold: " + unit.cost.Gold : "")) : "-"}}
+          </p>
+        </td>
+      </tr>
+      }
+    </aoe-table>
+  </div>
+</div>
